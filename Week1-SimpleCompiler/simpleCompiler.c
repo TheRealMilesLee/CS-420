@@ -1,10 +1,10 @@
 /**
  * @file simpleCompiler.c
  * @author Hengyi Li (hl3265@truman.edu) and Dr.Yu (cyyu@truman.edu)
- * @brief This file is to demonstrate a simple compiler that compile an integer
+ * @brief This file is to show a simple compiler that compile an integer
  * @version 0.1
  * @date 2022-08-31
- * @copyright Copyright (c) 2022. Truman State University. All rights reserved
+ * @copyright Copyright (c) 2022. Truman State University. All rights reserve
  */
 
 #include <stdio.h>

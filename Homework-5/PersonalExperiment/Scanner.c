@@ -19,13 +19,13 @@ char *names[] = {NULL, "LISTEN_PORT", "SERVER_NAME", "LOG_LEVEL", "PHP_INI_DIR"}
 
 int main(void)
 {
- /* Getting the token from the lexical analyzer. */
+  /* Getting the token from the lexical analyzer. */
   int name_token, value_token;
   name_token = yylex();
- /* Checking if the token is valid. */
+  /* Checking if the token is valid. */
   while (name_token)
   {
-  /* Checking if the token is valid. */
+    /* Checking if the token is valid. */
     printf("name token is %d\n", name_token);
     if (yylex() != COLON)
     {
@@ -34,7 +34,7 @@ int main(void)
       return 1;
     }
     value_token = yylex();
-  /* Checking if the value token is an integer. */
+    /* Checking if the value token is an integer. */
     switch (name_token)
     {
     case LISTEN_PORT:
@@ -58,11 +58,11 @@ int main(void)
       }
       printf("%s is set to %s\n", names[name_token], yytext);
       break;
-  /* A default case for the switch statement. */
+      /* A default case for the switch statement. */
     default:
       printf("Syntax error in line %d\n", yylineno);
     }
-/* Getting the token from the lexical analyzer. */
+    /* Getting the token from the lexical analyzer. */
     name_token = yylex();
   }
   return 0;

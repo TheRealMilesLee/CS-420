@@ -5,8 +5,7 @@ extern int yylex();
 extern int yylineno;
 extern char *yytext;
 
-char *names[] = {NULL, "LISTEN_PORT", "SERVER_NAME", "LOG_LEVEL",
-                 "PHP_INI_DIR"};
+char *names[] = {NULL, "Listen", "ServerName", "LogLevel", "PHPIniDir"};
 
 int main(void)
 {
@@ -25,20 +24,20 @@ int main(void)
     switch (name_token)
     {
     case LISTEN_PORT:
-    case SERVER_NAME:
-    case LOG_LEVEL:
-      if (value_token != IDENTIFIER)
+      if (value_token != INTEGER)
       {
-        printf("Syntax error in line %d, Expected an identifier but found %s\n",
+        printf("Syntax error in line %d, Expected an integer but found %s\n",
                yylineno, yytext);
         return 1;
       }
       printf("%s is set to %s\n", names[name_token], yytext);
       break;
+    case SERVER_NAME:
+    case LOG_LEVEL:
     case PHP_INI_DIR:
-      if (value_token != INTEGER)
+      if (value_token != IDENTIFIER)
       {
-        printf("Syntax error in line %d, Expected an integer but found %s\n",
+        printf("Syntax error in line %d, Expected an identifier but found %s\n",
                yylineno, yytext);
         return 1;
       }

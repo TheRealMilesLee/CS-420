@@ -1,0 +1,4 @@
+Listen : 	8080
+ServerName : 	localhost
+LogLevel : 	warn
+PHPIniDir : 	php-8_1_10-Win32-vs16-x64

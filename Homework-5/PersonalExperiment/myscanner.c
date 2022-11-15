@@ -48,7 +48,23 @@ int main(void)
       break;
     /* Checking if the value token is an identifier. */
     case SERVER_NAME:
+      if (value_token != IDENTIFIER)
+      {
+        printf("Syntax error in line %d, Expected an identifier but found %s\n",
+               yylineno, yytext);
+        return 1;
+      }
+      printf("%s is set to %s\n", names[name_token], yytext);
+      break;
     case LOG_LEVEL:
+      if (value_token != IDENTIFIER)
+      {
+        printf("Syntax error in line %d, Expected an identifier but found %s\n",
+               yylineno, yytext);
+        return 1;
+      }
+      printf("%s is set to %s\n", names[name_token], yytext);
+      break;
     case PHP_INI_DIR:
       if (value_token != IDENTIFIER)
       {

@@ -14,7 +14,6 @@
 [1-9][0-9]*       return INTEGER;
 [ \t\n]         ;
 .         printf("unexpected character\n");
-
 %%
 
 int yywrap(void)

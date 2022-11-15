@@ -1,16 +1,17 @@
 %{
 #include "Scanner.h"
 %}
+%option nounput yylineno
 
 %%
 :         return COLON;
-"LISTEN_PORT"     return LISTEN_PORT;
-"SERVER_NAME"     return SERVER_NAME;
-"LOG_LEVEL" return LOG_LEVEL;
-"PHP_INI_DIR"     return PHP_INI_DIR;
+"Listen"     return LISTEN_PORT;
+"ServerName"     return SERVER_NAME;
+"LogLevel" return LOG_LEVEL;
+"PHPIniDir"     return PHP_INI_DIR;
 
-[a-zA-Z][_a-zA-Z0-9]* return IDENTIFIER;
-[1-9][0-9]*       return INTEGER;
+[a-zA-Z][_a-zA-Z0-9]*return IDENTIFIER;
+[0-9][0-9]*       return INTEGER;
 [ \t\n]         ;
 .         printf("unexpected character\n");
 %%

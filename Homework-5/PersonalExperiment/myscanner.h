@@ -1,5 +1,5 @@
 /**
- * @file Scanner.h
+ * @file myscanner.h
  * @author Hengyi Li
  * @version 0.1
  * @brief This file is to define a symbol for each type of token that is in httpd.conf.sample

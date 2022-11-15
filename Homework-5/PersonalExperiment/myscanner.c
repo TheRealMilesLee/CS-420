@@ -1,12 +1,12 @@
 /**
- * @file Scanner.c
+ * @file myscanner.c
  * @author Hengyi Li and Dr.Yu
  * @brief This file is the lexical scanner
  * @version 0.1
  * @date 2022-11-14
  * @copyright Copyright (c) 2022. Hengyi Li, All rights reserved
  */
-#include "Scanner.h"
+#include "myscanner.h"
 #include <stdio.h>
 
 /* A declaration of the functions and variables defined in the lexical analyzer. */

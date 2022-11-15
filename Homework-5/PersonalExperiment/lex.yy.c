@@ -491,11 +491,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "Scanner.l"
+#line 1 "myscanner.l"
 /* Hengyi Li*/
-#line 3 "Scanner.l"
+#line 3 "myscanner.l"
   /* Inclue the DEFINE file*/
-#include "Scanner.h"
+#include "myscanner.h"
 #line 499 "lex.yy.c"
 /* Find a symbol for each type of token that is in the input file */
 #line 501 "lex.yy.c"
@@ -713,7 +713,7 @@ YY_DECL
 		}
 
 	{
-#line 9 "Scanner.l"
+#line 9 "myscanner.l"
 
 #line 718 "lex.yy.c"
 
@@ -784,53 +784,53 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "Scanner.l"
+#line 10 "myscanner.l"
 return COLON;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "Scanner.l"
+#line 11 "myscanner.l"
 return LISTEN_PORT;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 12 "Scanner.l"
+#line 12 "myscanner.l"
 return SERVER_NAME;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "Scanner.l"
+#line 13 "myscanner.l"
 return LOG_LEVEL;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "Scanner.l"
+#line 14 "myscanner.l"
 return PHP_INI_DIR;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 16 "Scanner.l"
+#line 16 "myscanner.l"
 return IDENTIFIER;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 17 "Scanner.l"
+#line 17 "myscanner.l"
 return INTEGER;
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 18 "Scanner.l"
+#line 18 "myscanner.l"
 ;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 19 "Scanner.l"
+#line 19 "myscanner.l"
 printf("unexpected character\n");
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 20 "Scanner.l"
+#line 20 "myscanner.l"
 ECHO;
 	YY_BREAK
 #line 836 "lex.yy.c"
@@ -1809,7 +1809,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "Scanner.l"
+#line 20 "myscanner.l"
 
 
 /* Connection to the C program */

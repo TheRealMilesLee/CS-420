@@ -1,7 +1,7 @@
 /* Hengyi Li*/
 %{
   /* Inclue the DEFINE file*/
-#include "Scanner.h"
+#include "myscanner.h"
 %}
 %option nounput yylineno
 

@@ -1,5 +1,10 @@
 /**
- * This file is to define a symbol for each type of token that is in config.in
+ * @file Scanner.h
+ * @author Hengyi Li
+ * @version 0.1
+ * @brief This file is to define a symbol for each type of token that is in httpd.conf.sample
+ * @date 2022-11-14
+ * @copyright Copyright (c) 2022. Hengyi Li, All rights reserved
  */
 
 #define LISTEN_PORT 1

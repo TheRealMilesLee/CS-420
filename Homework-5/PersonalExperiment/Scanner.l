@@ -1,8 +1,11 @@
+/* Hengyi Li*/
 %{
+  /* Inclue the DEFINE file*/
 #include "Scanner.h"
 %}
 %option nounput yylineno
 
+/* Find a symbol for each type of token that is in the input file */
 %%
 :         return COLON;
 "Listen"     return LISTEN_PORT;
@@ -16,6 +19,7 @@
 .         printf("unexpected character\n");
 %%
 
+/* Connection to the C program */
 int yywrap()
 {
   return 1;

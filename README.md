@@ -1,44 +1,17 @@
-# ProjectName
+# CS-420 Project README
 ## Project Overview
-This repository contains materials and code for the CS-420 course. The project structure includes homework assignments, experimental implementations, and compiler-related projects.
-## Directory Structure
-- `Homework-5` - Contains homework materials and VSCode configuration
-- `Week1-SimpleCompiler` - Includes compiler implementation components
-- `ClassExample` - Sample code demonstrations
-- `PersonalExperiment` - Custom experimentation files
-## Key Files
-- `README.md` (current file)
-- `readme.md` (alternate README)
-- Note: 15 `.sample` files and 9 `.c` files are core components
-## File Types
-| Extension | Count |
-|----------|-------|
-| `.c`     | 9     |
-| `.h`     | 2     |
-| `.json`  | 3     |
-| `.sample`| 15    |
-| `.s`     | 2     |
-| `.l`     | 2     |
-| `.myscanner` | 2 |
-## Technical Notes
-- Primary language: C (9 files)
-- Includes C/C++ header files (2)
-- Contains compiler implementation artifacts in `Week1-SimpleCompiler` directory
-- Multiple platform-specific versions in `Class_Example` subdirectory
-
----
-
-## 中文版本
-
-# CS-420
-## 项目概述
-本项目为CS-420课程相关代码集合，包含编译器实现、实验示例及作业实现。项目结构包含多个子目录，涵盖不同阶段的开发任务。
-## 目录结构
+CS-420 is a compiler development project focused on implementing lexical analysis, parsing, and code generation for custom programming languages. The core functionality includes:
+- Lexical analysis using Lex (`.l` files)
+- Syntax parsing with Yacc/Bison (`.c` files)
+- Target code generation for multiple platforms (Linux/macOS/Windows)
+- Support for both standard coursework assignments and personal experimentation
+The project contains multiple submodules for different homework assignments and experimental implementations.
+## File Structure
 .
 ├── Homework-5
-│   ├── .vscode
 │   ├── ClassExample
 │   └── PersonalExperiment
+│
 ├── Week1-SimpleCompiler
 │   ├── .vscode
 │   ├── Class_Example
@@ -46,6 +19,7 @@ This repository contains materials and code for the CS-420 course. The project s
 │   │   ├── Windows_Version
 │   │   └── macOS_Version
 │   └── Homework
+│
 ├── .sample
 ├── .c
 ├── .main
@@ -56,43 +30,117 @@ This repository contains materials and code for the CS-420 course. The project s
 ├── .myscanner
 ├── .l
 ├── .h
-├── .exe
 ├── .rev
 ├── .pdf
 ├── .packed-refs
 ├── .pack
-├── .md
 ├── .index
 ├── .in
 ├── .idx
-└── .fe890118ba1860004e961568bf44b15aa6f400
-## 文件类型统计
-| 文件类型     | 数量 |
-|--------------|------|
-| .sample      | 15   |
-| .c           | 9    |
-| .main        | 4    |
-| .HEAD        | 4    |
-| .json        | 3    |
-| .target      | 2    |
-| .s           | 2    |
-| .myscander   | 2    |
-| .l           | 2    |
-| .h           | 2    |
-| .exe         | 2    |
-## 技术栈
-- C语言（9个文件）
-- C/C++头文件（2个文件）
-- 汇编语言（.s文件）
-- Lex/Yacc（.l/.myscanner文件）
-- JSON配置文件（.json文件）
-## 使用说明
-1. 项目包含跨平台编译配置（Linux/Windows/macOS）
-2. 建议通过`make`命令构建项目
-3. 注意检查`.target`文件配置
-4. 部分实验需特定环境（如`.rev`文件相关工具）
-## 贡献指南
-1. 请先阅读`Homework-5/PersonalExperiment`目录说明
-2. 新增功能建议通过Pull Request提交
-3. 代码提交请保持良好的注释规范
-4. 重大修改需包含单元测试用例
+├── .fe890118ba1860004e961568bf44b15aa6f400
+├── .f3acd788d40fff4d1d024d35347883e1de2b72
+└── .exclude
+## Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   sudo apt-get install flex bison g++
+   ```
+3. Configure environment variables for cross-compilation (if needed)
+## Usage
+1. Compile the lexical analyzer:
+   ```bash
+   flex -o scanner.c scanner.l
+   ```
+2. Build the parser:
+   ```bash
+   bison -d -o parser.c parser.y
+   ```
+3. Compile the target code:
+   ```bash
+   gcc -o compiler main.c scanner.c parser.c -lm
+   ```
+4. Run the compiler:
+   ```bash
+   ./compiler inputfile
+   ```
+## Dependencies
+- GNU Flex (for lexical analysis)
+- GNU Bison (for syntax parsing)
+- GCC compiler suite
+- Standard C library (libc)
+## Contribution Guidelines
+- Submit bug reports via GitHub Issues
+- Propose new features with detailed specifications
+- Pull requests should include:
+  - Clear commit messages
+  - Documentation updates
+  - Automated test cases
+  - Compatibility checks across platforms
+## Development Notes
+- The project contains multiple submodules for different homework assignments
+- Platform-specific implementations are separated by OS type
+- Experimental code is contained in the `PersonalExperiment` directory
+- All source files follow standard C programming practices
+
+---
+
+## 中文版本
+
+# CS-420 项目文档
+## 项目简介
+## 安装方式
+1. 确保系统安装 C 编译器（如 `gcc`）
+2. 安装 Lex/Yacc 工具链（用于生成词法/语法分析器）
+3. 克隆项目仓库后，直接编译对应模块的 `.c` 文件
+## 使用方法
+1. 编译词法分析器：  
+   ```bash
+   flex ClassExample/Linux_Version/lexer.l
+   gcc -o lexer ClassExample/Linux_Version/lexer.c
+   ```
+2. 运行编译器主程序：  
+   ```bash
+   ./Homework/your_compiler_entry_point
+   ```
+3. 查看实验报告：  
+   `Homework-5/PersonalExperiment/` 目录包含实验文档与实现说明
+## 项目结构说明
+.
+├── Homework-5
+│   ├── .vscode
+│   ├── ClassExample
+│   ├── PersonalExperiment
+├── Week1-SimpleCompiler
+│   ├── .vscode
+│   ├── Class_Example
+│   │   ├── Linux_Version
+│   │   ├── Windows_Version
+│   │   └── macOS_Version
+│   └── Homework
+├── .sample
+├── .c
+├── .main
+├── .json
+├── .target
+├── .s
+├── .myscanner
+├── .l
+├── .h
+├── .rev
+├── .pdf
+└── .index
+## 依赖项
+- C 编译器（gcc/clang）
+- Lex 工具（flex）
+- Yacc 工具（bison）
+- 标准 C 库（libc）
+## 开发与贡献指南
+1. 代码规范：遵循标准 C 语言编码规范，注释采用 Doxygen 格式
+2. 提交规范：提交前运行 `make check` 验证代码规范性
+3. 问题报告：通过 `Homework-5/PersonalExperiment/issue_report.md` 提交问题
+4. 贡献流程：  
+   - Fork 项目仓库  
+   - 创建功能分支  
+   - 提交代码变更  
+   - 开发者接受后合并至主分支
